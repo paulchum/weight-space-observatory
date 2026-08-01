@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="520" viewBox="0 0 1280 520" role="img" aria-labelledby="title description">
+  <title id="title">Weight-Space Observatory architecture</title>
+  <desc id="description">Transient LoRA and adapter telemetry becomes 64 privacy-preserving features. Learned risk and novelty models score it. A LinUCB policy constrained by an operator-owned ceiling routes each event to observe, deep scan, or human review. Only verified outcomes feed back into learning.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#060914"/>
+      <stop offset="1" stop-color="#111a32"/>
+    </linearGradient>
+    <linearGradient id="cyanStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#213052" stroke-width="1" opacity="0.38"/>
+    </pattern>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0 0L12 6L0 12Z" fill="#38bdf8"/>
+    </marker>
+    <marker id="feedbackArrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0 0L12 6L0 12Z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="520" rx="28" fill="url(#background)"/>
+  <rect width="1280" height="520" rx="28" fill="url(#grid)"/>
+  <path d="M42 94H1238" stroke="#273653" stroke-width="1"/>
+
+  <text x="48" y="53" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="2">HOW IT WORKS</text>
+  <text x="1232" y="53" fill="#67e8f9" font-family="IBM Plex Mono, monospace" font-size="14" text-anchor="end">SHADOW FIRST · FAIL CLOSED</text>
+
+  <!-- Sensor -->
+  <g transform="translate(48 138)">
+    <rect width="236" height="168" rx="18" fill="#0b1224" stroke="#475569" stroke-width="2"/>
+    <rect x="18" y="18" width="46" height="46" rx="12" fill="#13254a" stroke="#38bdf8"/>
+    <path d="M28 50C35 35 45 58 54 34" fill="none" stroke="#67e8f9" stroke-width="3" stroke-linecap="round"/>
+    <text x="18" y="92" fill="#94a3b8" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1.5">SENSOR</text>
+    <text x="18" y="119" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="700">Transient updates</text>
+    <text x="18" y="144" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-size="14">LoRA · adapters · gates</text>
+  </g>
+
+  <!-- Features -->
+  <g transform="translate(330 138)">
+    <rect width="236" height="168" rx="18" fill="#0b1224" stroke="#2563eb" stroke-width="2"/>
+    <g transform="translate(18 18)" fill="#3b82f6">
+      <rect width="9" height="9" rx="2"/><rect x="14" width="9" height="9" rx="2" opacity=".7"/><rect x="28" width="9" height="9" rx="2" opacity=".45"/>
+      <rect y="14" width="9" height="9" rx="2" opacity=".65"/><rect x="14" y="14" width="9" height="9" rx="2"/><rect x="28" y="14" width="9" height="9" rx="2" opacity=".65"/>
+      <rect y="28" width="9" height="9" rx="2" opacity=".4"/><rect x="14" y="28" width="9" height="9" rx="2" opacity=".7"/><rect x="28" y="28" width="9" height="9" rx="2"/>
+    </g>
+    <text x="18" y="92" fill="#93c5fd" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1.5">ENCODE</text>
+    <text x="18" y="119" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="700">64 derived features</text>
+    <text x="18" y="144" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-size="14">Privacy-preserving summaries</text>
+  </g>
+
+  <!-- Learned risk -->
+  <g transform="translate(612 138)">
+    <rect width="236" height="168" rx="18" fill="#0b1224" stroke="#7c3aed" stroke-width="2"/>
+    <path d="M18 58C30 53 33 33 46 38C57 42 58 20 70 24" fill="none" stroke="#a78bfa" stroke-width="3" stroke-linecap="round" filter="url(#glow)"/>
+    <circle cx="18" cy="58" r="3" fill="#c4b5fd"/><circle cx="46" cy="38" r="3" fill="#c4b5fd"/><circle cx="70" cy="24" r="3" fill="#c4b5fd"/>
+    <text x="18" y="92" fill="#c4b5fd" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1.5">LEARN</text>
+    <text x="18" y="119" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="700">Risk + novelty</text>
+    <text x="18" y="144" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-size="14">AdaGrad · fast/slow memory</text>
+  </g>
+
+  <!-- Policy -->
+  <g transform="translate(894 138)">
+    <rect width="236" height="168" rx="18" fill="#0b1224" stroke="#06b6d4" stroke-width="2"/>
+    <path d="M19 23H71V61H19Z" fill="#10334b" stroke="#22d3ee"/>
+    <path d="M33 42H57M45 30V54" stroke="#67e8f9" stroke-width="2"/>
+    <text x="18" y="92" fill="#67e8f9" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1.5">DECIDE</text>
+    <text x="18" y="119" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="700">Bounded policy</text>
+    <text x="18" y="144" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-size="14">LinUCB · operator ceiling</text>
+  </g>
+
+  <!-- Forward arrows -->
+  <path d="M286 222H320" stroke="url(#cyanStroke)" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M568 222H602" stroke="url(#cyanStroke)" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M850 222H884" stroke="url(#cyanStroke)" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- Actions -->
+  <g transform="translate(1158 130)">
+    <text x="0" y="0" fill="#94a3b8" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="1.4">ACT</text>
+    <rect y="18" width="80" height="42" rx="12" fill="#0f3028" stroke="#22c55e"/>
+    <text x="40" y="44" fill="#bbf7d0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">OBSERVE</text>
+    <rect y="70" width="80" height="42" rx="12" fill="#102c47" stroke="#38bdf8"/>
+    <text x="40" y="96" fill="#bae6fd" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">SCAN</text>
+    <rect y="122" width="80" height="42" rx="12" fill="#3a2910" stroke="#f59e0b"/>
+    <text x="40" y="148" fill="#fde68a" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">REVIEW</text>
+  </g>
+  <path d="M1132 222H1148" stroke="#38bdf8" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- Feedback loop -->
+  <path d="M1198 320V400C1198 425 1178 445 1153 445H738C710 445 691 424 691 397V321" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="7 7" marker-end="url(#feedbackArrow)"/>
+  <rect x="807" y="421" width="272" height="44" rx="22" fill="#2d210f" stroke="#f59e0b"/>
+  <text x="943" y="448" fill="#fde68a" font-family="IBM Plex Mono, monospace" font-size="13" font-weight="700" text-anchor="middle" letter-spacing="1">VERIFIED OUTCOMES ONLY</text>
+
+  <g transform="translate(48 364)">
+    <circle cx="14" cy="14" r="14" fill="#0f3028" stroke="#22c55e"/>
+    <path d="M8 14L12 18L20 10" fill="none" stroke="#86efac" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="38" y="12" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">Every decision is versioned and auditable.</text>
+    <text x="38" y="34" fill="#94a3b8" font-family="Inter, Arial, sans-serif" font-size="14">Shadow and enforce attempts are tracked separately; failures fall back to human review.</text>
+  </g>
+</svg>

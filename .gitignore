@@ -1,0 +1,43 @@
+# Environments
+.env
+.env.*
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Python build
+build/
+dist/
+*.egg-info/
+
+# Rust
+/src/daemon/target/
+**/*.rs.bk
+Cargo.lock
+
+# Data, telemetry, weights
+*.pt
+*.pth
+*.safetensors
+*.bin
+*.onnx
+/data/
+/logs/
+/runs/
+/artifacts/
+/telemetry/
+/outputs/
+*.jsonl
+
+# Notebooks
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/

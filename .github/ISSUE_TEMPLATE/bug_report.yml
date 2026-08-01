@@ -1,0 +1,39 @@
+name: Bug report
+description: Report reproducible incorrect behavior or a failed safety invariant.
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for making the gateway more reliable. Please remove prompts, telemetry,
+        paths, or identifiers that may contain sensitive data.
+  - type: textarea
+    id: behavior
+    attributes:
+      label: What happened?
+      description: Include the expected behavior and the actual behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Provide the smallest safe example and exact commands.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Python version, OS, package version, and relevant optional dependencies.
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundary
+    attributes:
+      label: Responsible-research check
+      options:
+        - label: This report does not include operational evasion or sensitive telemetry.
+          required: true

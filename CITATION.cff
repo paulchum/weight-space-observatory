@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If Weight-Space Observatory supports your research, please cite this repository."
+title: "Weight-Space Observatory: A Learned Trust Gateway for Transient Adapter Telemetry"
+type: software
+authors:
+  - family-names: "C."
+    given-names: "Paul"
+version: 0.1.0
+date-released: 2026-08-01
+license: MIT
+repository-code: "https://github.com/paulchum/weight-space-observatory"
+url: "https://github.com/paulchum/weight-space-observatory"
+keywords:
+  - AI safety
+  - agent security
+  - LoRA
+  - adapter monitoring
+  - weight-space telemetry
+  - autonomous control

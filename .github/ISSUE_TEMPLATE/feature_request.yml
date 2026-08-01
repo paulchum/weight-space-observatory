@@ -1,0 +1,33 @@
+name: Feature request
+description: Propose a defensive collector, control, evaluation, or usability improvement.
+title: "[Feature]: "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Operator problem
+      description: What real monitoring or control problem would this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed approach
+      description: Describe the smallest useful interface or behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and trust boundary
+      description: What would prove this works, and what would remain unproven?
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundary
+    attributes:
+      label: Responsible-research check
+      options:
+        - label: This proposal is defensive and does not add evasion or covert-channel capability.
+          required: true

@@ -1,0 +1,30 @@
+schema_version: "1.0"
+mode: demo
+
+deployment:
+  name: "Demo Agent Platform"
+  id: "demo-agent-platform"
+
+runtime:
+  framework: "torch_peft_compatible"
+  model_id: "tiny-local-peft-pilot"
+  observer_level: "derived_weight_space_telemetry"
+
+observability:
+  service_name: "weight-space-observatory"
+  service_namespace: "agent-security"
+  destination_mode: file
+
+modules:
+  - module_id: "pilot.receiver.layers.0.lora"
+    adapter_id: "default"
+    task_family: "agent_tool_use"
+
+baseline_records: 12
+
+inputs:
+  baseline_telemetry:
+  audit_telemetry:
+
+report:
+  format: html

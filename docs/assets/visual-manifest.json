@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "project": "Weight-Space Observatory",
+  "generated_at": "2026-08-01",
+  "assets": [
+    {
+      "path": "docs/assets/weight-space-observatory-hero.png",
+      "dimensions": "1280x640",
+      "role": "GitHub README hero and social preview",
+      "source": "OpenAI native image generation; Signal Firewall direction; deterministic resize from 1774x887",
+      "alt": "A stream of transient neural-weight updates passing through a learned trust boundary; trusted paths continue in blue while anomalous paths are diverted in amber for review."
+    },
+    {
+      "path": "docs/assets/weight-space-observatory-architecture.svg",
+      "dimensions": "1280x520",
+      "role": "Accessible system architecture diagram",
+      "source": "Deterministic SVG composition from the implemented runtime contract",
+      "alt": "Transient update telemetry becomes 64 derived features, learned risk and novelty scores, a bounded policy decision, and an observe, scan, or review action; verified outcomes feed learning."
+    }
+  ],
+  "notes": [
+    "Exact product text and architecture labels are deterministic, not image-generated.",
+    "The architecture diagram includes SVG title and description elements.",
+    "No performance claim is embedded in either image."
+  ]
+}

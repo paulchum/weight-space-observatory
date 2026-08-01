@@ -1,0 +1,79 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "weight-space-observatory"
+version = "0.1.0"
+description = "A learned trust gateway for transient LoRA and adapter telemetry."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+keywords = [
+    "ai-safety",
+    "agent-security",
+    "lora",
+    "machine-learning",
+    "telemetry",
+]
+authors = [
+    { name = "Paul C." }
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "torch",
+    "numpy",
+    "pydantic>=2",
+    "PyYAML>=6",
+    "scikit-learn",
+    "rich",
+]
+
+
+[project.scripts]
+wso-audit = "wso.cli:main"
+wso-brain = "wso.brain.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/paulchum/weight-space-observatory"
+Repository = "https://github.com/paulchum/weight-space-observatory"
+Issues = "https://github.com/paulchum/weight-space-observatory/issues"
+Documentation = "https://github.com/paulchum/weight-space-observatory#readme"
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff",
+    "mypy",
+]
+model = [
+    "transformers",
+    "peft",
+    "safetensors",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.mypy]
+python_version = "3.10"
+ignore_missing_imports = true
+warn_unused_configs = true
+check_untyped_defs = true
