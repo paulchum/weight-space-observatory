@@ -12,6 +12,7 @@ import json
 import math
 import sys
 from collections.abc import Iterable
+from typing import Any, cast
 
 import numpy as np
 
@@ -160,8 +161,9 @@ def run_defensive_self_play(
 
     if not train_hard or not eval_hard:
         raise RuntimeError("self-play failed to construct disjoint train and evaluation groups")
-    rng.shuffle(train_hard)
-    rng.shuffle(eval_hard)
+    # NumPy accepts mutable sequences here, though its 2.2 stubs only describe arrays.
+    rng.shuffle(cast(Any, train_hard))
+    rng.shuffle(cast(Any, eval_hard))
     challenger = brain.classifier.clone()
 
     training: list[tuple[np.ndarray, bool]] = [(vector, True) for vector, _, _, _ in train_hard]

@@ -13,6 +13,7 @@ from collections.abc import Iterable
 from typing import Any
 
 import numpy as np
+import numpy.typing as npt
 
 from wso.brain.types import (
     BrainAction,
@@ -30,6 +31,8 @@ ACTIONS: tuple[BrainAction, ...] = (
     "quarantine",
 )
 
+FloatArray = npt.NDArray[np.float64]
+
 
 class OnlineRiskClassifier:
     """Diagonal-Laplace logistic learner with an AdaGrad update."""
@@ -38,9 +41,9 @@ class OnlineRiskClassifier:
         self.dimension = dimension
         self.learning_rate = learning_rate
         self.l2 = l2
-        self.weights = np.zeros(dimension + 1, dtype=np.float64)
-        self.gradient_square = np.full(dimension + 1, 1e-4, dtype=np.float64)
-        self.precision = np.ones(dimension + 1, dtype=np.float64)
+        self.weights: FloatArray = np.zeros(dimension + 1, dtype=np.float64)
+        self.gradient_square: FloatArray = np.full(dimension + 1, 1e-4, dtype=np.float64)
+        self.precision: FloatArray = np.ones(dimension + 1, dtype=np.float64)
         self.examples = 0
         self.positive_examples = 0
         self.negative_examples = 0
@@ -201,9 +204,9 @@ class MultiTimescaleNovelty:
         self.dimension = dimension
         self.calibration_limit = calibration_limit
         self.count = 0
-        self.mean = np.zeros(dimension, dtype=np.float64)
-        self.m2 = np.zeros(dimension, dtype=np.float64)
-        self.fast_mean = np.zeros(dimension, dtype=np.float64)
+        self.mean: FloatArray = np.zeros(dimension, dtype=np.float64)
+        self.m2: FloatArray = np.zeros(dimension, dtype=np.float64)
+        self.fast_mean: FloatArray = np.zeros(dimension, dtype=np.float64)
         self.fast_initialized = False
         self.calibration: list[float] = []
 
@@ -361,8 +364,12 @@ class ConstrainedContextualBandit:
 
     def __init__(self, *, exploration: float) -> None:
         self.exploration = exploration
-        self.a = {action: np.eye(self.context_dimension) * 2.0 for action in ACTIONS}
-        self.b = {action: np.zeros(self.context_dimension) for action in ACTIONS}
+        self.a: dict[BrainAction, FloatArray] = {
+            action: np.eye(self.context_dimension) * 2.0 for action in ACTIONS
+        }
+        self.b: dict[BrainAction, FloatArray] = {
+            action: np.zeros(self.context_dimension) for action in ACTIONS
+        }
         self.counts = {action: 0 for action in ACTIONS}
 
     def context(

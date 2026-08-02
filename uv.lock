@@ -1964,14 +1964,14 @@ model = [
 
 [package.metadata]
 requires-dist = [
-    { name = "mypy", marker = "extra == 'dev'" },
+    { name = "mypy", marker = "extra == 'dev'", specifier = "==2.1.0" },
     { name = "numpy" },
     { name = "peft", marker = "extra == 'model'" },
     { name = "pydantic", specifier = ">=2" },
-    { name = "pytest", marker = "extra == 'dev'" },
+    { name = "pytest", marker = "extra == 'dev'", specifier = "==9.0.3" },
     { name = "pyyaml", specifier = ">=6" },
     { name = "rich" },
-    { name = "ruff", marker = "extra == 'dev'" },
+    { name = "ruff", marker = "extra == 'dev'", specifier = "==0.15.14" },
     { name = "safetensors", marker = "extra == 'model'" },
     { name = "scikit-learn" },
     { name = "torch" },

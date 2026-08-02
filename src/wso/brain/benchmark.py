@@ -11,6 +11,7 @@ import math
 import uuid
 from collections import Counter
 from pathlib import Path
+from typing import Any, cast
 
 import numpy as np
 
@@ -91,8 +92,9 @@ def generate_defensive_fixture(
                 fixture_seed=seed,
             )
         )
-    rng.shuffle(labeled)
-    rng.shuffle(audit)
+    # NumPy accepts mutable sequences here, though its 2.2 stubs only describe arrays.
+    rng.shuffle(cast(Any, labeled))
+    rng.shuffle(cast(Any, audit))
     return baseline, labeled, audit
 
 

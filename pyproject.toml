@@ -52,9 +52,9 @@ Documentation = "https://github.com/paulchum/weight-space-observatory#readme"
 
 [project.optional-dependencies]
 dev = [
-    "pytest",
-    "ruff",
-    "mypy",
+    "pytest==9.0.3",
+    "ruff==0.15.14",
+    "mypy==2.1.0",
 ]
 model = [
     "transformers",
